@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>ContactPerson.h</title>
+<style type = "text/css">
+.orderList {
+tab-size:4;
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008282;}
+.literal {color: #0000ff;}
+.preprocessor {color: grey;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "preprocessor">#ifndef CONTACTPERSON_H_INCLUDED</span></span></li><li><span><span class = "preprocessor">#define CONTACTPERSON_H_INCLUDED</span></span></li><li><span></span></li><li><span><span class = "preprocessor">#include &lt;string.h&gt;</span></span></li><li><span><span class = "preprocessor">#include &lt;stdio.h&gt;</span></span></li><li><span></span></li><li><span><span class = "preprocessor">#define ALL 5         LINECOMMENT全部</span></span></li><li><span><span class = "preprocessor">#define FAMILY 4      LINECOMMENT家庭</span></span></li><li><span><span class = "preprocessor">#define FRIENDS 3     LINECOMMENT朋友</span></span></li><li><span><span class = "preprocessor">#define SCHOOLMATES 2 LINECOMMENT同学</span></span></li><li><span><span class = "preprocessor">#define OTHERS 1      LINECOMMENT其他</span></span></li><li><span></span></li><li><span><span class = "keyword">class</span> ContactPerson</span></li><li><span>{</span></li><li><span><span class = "keyword">public</span>:</span></li><li><span>    ContactPerson();</span></li><li><span></span></li><li><span>    <span class = "keyword">void</span> setName(<span class = "keyword">char</span> str[]);</span></li><li><span></span></li><li><span>    <span class = "keyword">void</span> setPhoneNumber(<span class = "keyword">char</span> str[]);</span></li><li><span></span></li><li><span>    <span class = "keyword">void</span> setQq(<span class = "keyword">char</span> str[]);</span></li><li><span></span></li><li><span>    <span class = "keyword">void</span> setEmail(<span class = "keyword">char</span> str[]);</span></li><li><span></span></li><li><span>    <span class = "keyword">void</span> setAddress(<span class = "keyword">char</span> str[]);</span></li><li><span></span></li><li><span>    <span class = "keyword">void</span> setRelation(<span class = "keyword">int</span> rel);</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> * getName();</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> * getPhoneNumber();</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> * getQq();</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> * getEmail();</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> * getAddress();</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> * mergeStr(<span class = "keyword">char</span> str[]);</span></li><li><span></span></li><li><span>    <span class = "keyword">int</span> getRelation();</span></li><li><span></span></li><li><span></span></li><li><span>token = ' ';</span></li><li><span><span class = "keyword">private</span>:</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> name[<span class = "literal">20</span>];</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> phoneNumber[<span class = "literal">20</span>];</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> qq[<span class = "literal">15</span>];</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> email[<span class = "literal">25</span>];</span></li><li><span></span></li><li><span>    <span class = "keyword">char</span> address[<span class = "literal">50</span>];</span></li><li><span></span></li><li><span>    <span class = "keyword">int</span> relation;</span></li><li><span></span></li><li><span></span></li><li><span>};</span></li><li><span></span></li><li><span><span class = "keyword">typedef</span> <span class = "keyword">struct</span> AddressBook</span></li><li><span>{</span></li><li><span>    ContactPerson person;</span></li><li><span></span></li><li><span>    AddressBook * next;<span class = "comment">//此链将全部联系人连起来</span></span></li><li><span></span></li><li><span>}AddressBook;</span></li><li><span></span></li><li><span></span></li><li><span></span></li><li><span><span class = "preprocessor">#endif LINECOMMENT CONTACTPERSON_H_INCLUDED</span></span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="D:\代码\JavaStudy\Code2Html\top.png"onerror="nofind();" width="48" alt="Back to top" title="Back to top"></a>
+<script type="text/javascript">
+function nofind(){
+var img=event.srcElement;
+img.src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&size=48"; 
+img.onerror=null;}
+</script>
+</body>
+</html>

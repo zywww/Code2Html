@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>2.java</title>
+<style type = "text/css">
+.orderList {
+tab-size:4;
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008282;}
+.literal {color: #0000ff;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "keyword">package</span> GUI;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> java.awt.Color;</span></li><li><span><span class = "keyword">import</span> java.awt.event.ActionEvent;</span></li><li><span><span class = "keyword">import</span> java.awt.event.ActionListener;</span></li><li><span><span class = "keyword">import</span> java.io.File;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> javax.swing.BorderFactory;</span></li><li><span><span class = "keyword">import</span> javax.swing.Box;</span></li><li><span><span class = "keyword">import</span> javax.swing.JButton;</span></li><li><span><span class = "keyword">import</span> javax.swing.JLabel;</span></li><li><span><span class = "keyword">import</span> javax.swing.JPanel;</span></li><li><span><span class = "keyword">import</span> javax.swing.JTextField;</span></li><li><span><span class = "keyword">import</span> javax.swing.filechooser.FileSystemView;</span></li><li><span></span></li><li><span><span class = "keyword">public</span> <span class = "keyword">class</span> AddressAndSearchBar <span class = "keyword">extends</span> JPanel {</span></li><li><span>	<span class = "keyword">public</span> FileSystemView fileSystemView =</span></li><li><span>	        FileSystemView.getFileSystemView();</span></li><li><span>	</span></li><li><span>	<span class = "comment">// File path;</span></span></li><li><span>	</span></li><li><span>	JFileTree tree;</span></li><li><span>	</span></li><li><span>	JTextField jtfAddress = <span class = "keyword">new</span> JTextField(<span class = "literal">60</span>);</span></li><li><span>	JTextField jtfSearch = <span class = "keyword">new</span> JTextField(<span class = "literal">15</span>);</span></li><li><span>	JButton jbtGo = <span class = "keyword">new</span> JButton(<span class = "literal">"=&gt;"</span>);</span></li><li><span>	JButton jbtBack = <span class = "keyword">new</span> JButton(<span class = "literal">"后退"</span>);</span></li><li><span>	JButton jbtForward = <span class = "keyword">new</span> JButton(<span class = "literal">"前进"</span>);</span></li><li><span>	JButton jbtSearch = <span class = "keyword">new</span> JButton(<span class = "literal">"搜索"</span>);</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> AddressAndSearchBar() {</span></li><li><span>		Box box = Box.createHorizontalBox();</span></li><li><span>		</span></li><li><span>		JLabel jlbAddress = <span class = "keyword">new</span> JLabel(<span class = "literal">"地址："</span>);</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		box.add(Box.createHorizontalStrut(<span class = "literal">30</span>));</span></li><li><span>		</span></li><li><span>		box.add(jbtBack);</span></li><li><span>		box.add(Box.createHorizontalStrut(<span class = "literal">10</span>));</span></li><li><span>		box.add(jbtForward);</span></li><li><span>		</span></li><li><span>		box.add(Box.createHorizontalStrut(<span class = "literal">10</span>));</span></li><li><span>		box.add(jlbAddress);</span></li><li><span>		box.add(Box.createHorizontalStrut(<span class = "literal">10</span>));</span></li><li><span>		box.add(jtfAddress);</span></li><li><span>		box.add(jbtGo);</span></li><li><span>		</span></li><li><span>		box.add(Box.createHorizontalStrut(<span class = "literal">70</span>));</span></li><li><span>		<span class = "comment">// box.add(Box.createGlue());</span></span></li><li><span>		</span></li><li><span>		box.add(jtfSearch);</span></li><li><span>		box.add(Box.createHorizontalStrut(<span class = "literal">10</span>));</span></li><li><span>		box.add(jbtSearch);</span></li><li><span>		</span></li><li><span>		<span class = "comment">// jtfAddress.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));</span></span></li><li><span>		jtfAddress.setText(fileSystemView.getRoots()[<span class = "literal">0</span>].getAbsolutePath());</span></li><li><span>		<span class = "comment">/*jtfAddress.addActionListener(new ActionListener() {</span></span></li><li><span><span class = "comment">			</span></span></li><li><span><span class = "comment">			@Override</span></span></li><li><span><span class = "comment">			public void actionPerformed(ActionEvent e) {</span></span></li><li><span><span class = "comment">				LINECOMMENT TODO Auto-generated method stub</span></span></li><li><span><span class = "comment">				File folderPath = new File(jtfAddress.getText());</span></span></li><li><span><span class = "comment">				</span></span></li><li><span><span class = "comment">				if(folderPath.isDirectory()) {</span></span></li><li><span><span class = "comment">					path = folderPath;</span></span></li><li><span><span class = "comment">				}</span></span></li><li><span><span class = "comment">				</span></span></li><li><span><span class = "comment">			}</span></span></li><li><span><span class = "comment">		});*/</span></span></li><li><span></span></li><li><span>		<span class = "comment">// jtfSearch.setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));</span></span></li><li><span>		</span></li><li><span>		add(box);</span></li><li><span>		</span></li><li><span>		<span class = "comment">/*JPanel jp1 = new JPanel();</span></span></li><li><span><span class = "comment">		jp1.add(jbtBack);</span></span></li><li><span><span class = "comment">		jp1.add(jbtForward);</span></span></li><li><span><span class = "comment">		</span></span></li><li><span><span class = "comment">		JPanel jp2 = new JPanel();</span></span></li><li><span><span class = "comment">		jp2.add(jlbAddress);</span></span></li><li><span><span class = "comment">		jp2.add(jtaAddress);</span></span></li><li><span><span class = "comment">		</span></span></li><li><span><span class = "comment">		JPanel jp3 = new JPanel();</span></span></li><li><span><span class = "comment">		jp3.add(jtaSearch);</span></span></li><li><span><span class = "comment">		jp3.add(jbtSearch);</span></span></li><li><span><span class = "comment">		</span></span></li><li><span><span class = "comment">		setLayout(new BorderLayout());</span></span></li><li><span><span class = "comment">		add(jp1, BorderLayout.WEST);</span></span></li><li><span><span class = "comment">		add(jp2, BorderLayout.CENTER);</span></span></li><li><span><span class = "comment">		add(jp3, BorderLayout.EAST);*/</span></span></li><li><span></span></li><li><span>		</span></li><li><span>		setBorder(BorderFactory.createLineBorder(Color.lightGray));</span></li><li><span>		</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "comment">/*public void setTree(JFileTree tree) {</span></span></li><li><span><span class = "comment">		this.tree = tree;</span></span></li><li><span><span class = "comment">	}</span></span></li><li><span><span class = "comment">	</span></span></li><li><span><span class = "comment">	public void setPath(File path) {</span></span></li><li><span><span class = "comment">		this.path = path;</span></span></li><li><span><span class = "comment">	}*/</span></span></li><li><span></span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JTextField getJtfAddress() {</span></li><li><span>		<span class = "keyword">return</span> jtfAddress;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JButton getJbtGo() {</span></li><li><span>		<span class = "keyword">return</span> jbtGo;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JButton getJbtBack() {</span></li><li><span>		<span class = "keyword">return</span> jbtBack;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JButton getJbtForward() {</span></li><li><span>		<span class = "keyword">return</span> jbtForward;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JTextField getJtfSearch() {</span></li><li><span>		<span class = "keyword">return</span> jtfSearch;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JButton getJbtSearch() {</span></li><li><span>		<span class = "keyword">return</span> jbtSearch;</span></li><li><span>	}</span></li><li><span>}</span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="D:\代码\JavaStudy\Code2Html\top.png"onerror="nofind();" width="48" alt="Back to top" title="Back to top"></a>
+<script type="text/javascript">
+function nofind(){
+var img=event.srcElement;
+img.src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&size=48"; 
+img.onerror=null;}
+</script>
+</body>
+</html>

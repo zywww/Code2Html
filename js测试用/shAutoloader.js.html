@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>shAutoloader.js</title>
+<style type = "text/css">
+.orderList {
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008200;}
+.literal {color: #0000ff;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "comment">/***/</span></span></li><li><span><span class = "comment"> * SyntaxHighlighter*/</span></span></li><li><span><span class = "comment"> * http:LINECOMMENTalexgorbatchev.com/SyntaxHighlighter*/</span></span></li><li><span><span class = "comment"> **/</span></span></li><li><span><span class = "comment"> * SyntaxHighlighter is donationware. If you are using it, please donate.*/</span></span></li><li><span><span class = "comment"> * http:LINECOMMENTalexgorbatchev.com/SyntaxHighlighter/donate.html*/</span></span></li><li><span><span class = "comment"> **/</span></span></li><li><span><span class = "comment"> * @version*/</span></span></li><li><span><span class = "comment"> * 3.0.83 (July 02 2010)*/</span></span></li><li><span><span class = "comment"> * */</span></span></li><li><span><span class = "comment"> * @copyright*/</span></span></li><li><span><span class = "comment"> * Copyright (C) 2004-2010 Alex Gorbatchev.*/</span></span></li><li><span><span class = "comment"> **/</span></span></li><li><span><span class = "comment"> * @license*/</span></span></li><li><span><span class = "comment"> * Dual licensed under the MIT and GPL licenses.*/</span></span></li><li><span><span class = "comment"> */</span></span></li><li><span></span></li><li><span>(<span class = "keyword">function</span>() {</span></li><li><span></span></li><li><span><span class = "keyword">var</span> sh = SyntaxHighlighter;</span></li><li><span></span></li><li><span><span class = "comment">/***/</span></span></li><li><span><span class = "comment"> * Provides functionality to dynamically load only the brushes that a needed to render the current page.*/</span></span></li><li><span><span class = "comment"> **/</span></span></li><li><span><span class = "comment"> * There are two syntaxes that autoload understands. For example:*/</span></span></li><li><span><span class = "comment"> * */</span></span></li><li><span><span class = "comment"> * SyntaxHighlighter.autoloader(*/</span></span></li><li><span><span class = "comment"> *     [ 'applescript',          'Scripts/shBrushAppleScript.js' ],*/</span></span></li><li><span><span class = "comment"> *     [ 'actionscript3', 'as3', 'Scripts/shBrushAS3.js' ]*/</span></span></li><li><span><span class = "comment"> * );*/</span></span></li><li><span><span class = "comment"> **/</span></span></li><li><span><span class = "comment"> * or a more easily comprehendable one:*/</span></span></li><li><span><span class = "comment"> **/</span></span></li><li><span><span class = "comment"> * SyntaxHighlighter.autoloader(*/</span></span></li><li><span><span class = "comment"> *     'applescript       Scripts/shBrushAppleScript.js',*/</span></span></li><li><span><span class = "comment"> *     'actionscript3 as3 Scripts/shBrushAS3.js'*/</span></span></li><li><span><span class = "comment"> * );*/</span></span></li><li><span><span class = "comment"> */</span></span></li><li><span></span></li><li><span>sh.autoloader = <span class = "keyword">function</span>()</span></li><li><span>{</span></li><li><span>	<span class = "keyword">var</span> list = arguments,</span></li><li><span>		elements = sh.findElements(),</span></li><li><span>		brushes = {},</span></li><li><span>		scripts = {},</span></li><li><span>		all = SyntaxHighlighter.all,</span></li><li><span>		allCalled = false,</span></li><li><span>		allParams = null,</span></li><li><span>		i</span></li><li><span>		;</span></li><li><span>		</span></li><li><span>	SyntaxHighlighter.all = <span class = "keyword">function</span>(params)</span></li><li><span>	{</span></li><li><span>		allParams = params;</span></li><li><span>		allCalled = true;</span></li><li><span>	};</span></li><li><span>	</span></li><li><span>	<span class = "keyword">function</span> addBrush(aliases, url)</span></li><li><span>	{</span></li><li><span>		<span class = "keyword">for</span> (<span class = "keyword">var</span> i = 0; i &lt; aliases.length; i++)</span></li><li><span>			brushes[aliases[i]] = url;</span></li><li><span>	};</span></li><li><span>	</span></li><li><span>	<span class = "keyword">function</span> getAliases(item)</span></li><li><span>	{</span></li><li><span>		<span class = "keyword">return</span> item.pop</span></li><li><span>			? item</span></li><li><span>			: item.split(/\s+/)</span></li><li><span>			;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "comment">//  create table of aliases and script urls</span></span></li><li><span>	<span class = "keyword">for</span> (i = 0; i &lt; list.length; i++)</span></li><li><span>	{</span></li><li><span>		<span class = "keyword">var</span> aliases = getAliases(list[i]),</span></li><li><span>			url = aliases.pop()</span></li><li><span>			;</span></li><li><span>			</span></li><li><span>		addBrush(aliases, url);</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "comment">//  dynamically add &lt;script /&gt; tags to the document body</span></span></li><li><span>	<span class = "keyword">for</span> (i = 0; i &lt; elements.length; i++)</span></li><li><span>	{</span></li><li><span>		<span class = "keyword">var</span> url = brushes[elements[i].params.brush];</span></li><li><span>		</span></li><li><span>		<span class = "keyword">if</span> (!url)</span></li><li><span>			continue;</span></li><li><span>		</span></li><li><span>		scripts[url] = false;</span></li><li><span>		loadScript(url);</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">function</span> loadScript(url)</span></li><li><span>	{</span></li><li><span>		<span class = "keyword">var</span> script = document.createElement(<span class = "literal">'script'</span>),</span></li><li><span>			done = false</span></li><li><span>			;</span></li><li><span>		</span></li><li><span>		script.src = url;</span></li><li><span>		script.type = 'text/javascript';</span></li><li><span>		script.language = 'javascript';</span></li><li><span>		script.onload = script.onreadystatechange = <span class = "keyword">function</span>()</span></li><li><span>		{</span></li><li><span>			<span class = "keyword">if</span> (!done && (!<span class = "keyword">this</span>.readyState || <span class = "keyword">this</span>.readyState == <span class = "literal">'loaded'</span> || <span class = "keyword">this</span>.readyState == <span class = "literal">'complete'</span>))</span></li><li><span>			{</span></li><li><span>				done = true;</span></li><li><span>				scripts[url] = true;</span></li><li><span>				checkAll();</span></li><li><span>				</span></li><li><span>				<span class = "comment">//  Handle memory leak in IE</span></span></li><li><span>				script.onload = script.onreadystatechange = null;</span></li><li><span>				script.parentNode.removeChild(script);</span></li><li><span>			}</span></li><li><span>		};</span></li><li><span>		</span></li><li><span>		<span class = "comment">//  sync way of adding script tags to the page</span></span></li><li><span>		document.body.appendChild(script);</span></li><li><span>	};</span></li><li><span>	</span></li><li><span>	<span class = "keyword">function</span> checkAll()</span></li><li><span>	{</span></li><li><span>		<span class = "keyword">for</span>(<span class = "keyword">var</span> url <span class = "keyword">in</span> scripts)</span></li><li><span>			<span class = "keyword">if</span> (scripts[url] == false)</span></li><li><span>				return;</span></li><li><span>		</span></li><li><span>		<span class = "keyword">if</span> (allCalled)</span></li><li><span>			SyntaxHighlighter.highlight(allParams);</span></li><li><span>	};</span></li><li><span>};</span></li><li><span></span></li><li><span>})();</span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&amp;size=48" width="48" alt="Back to top" title="Back to top"></a>
+</body>
+</html>

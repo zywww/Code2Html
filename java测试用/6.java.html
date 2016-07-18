@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>6.java</title>
+<style type = "text/css">
+.orderList {
+tab-size:4;
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008282;}
+.literal {color: #0000ff;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "keyword">package</span> GUI;</span></li><li><span></span></li><li><span></span></li><li><span><span class = "keyword">import</span> java.awt.Color;</span></li><li><span><span class = "keyword">import</span> java.awt.Dimension;</span></li><li><span><span class = "keyword">import</span> java.awt.Graphics;</span></li><li><span><span class = "keyword">import</span> java.io.File;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> javax.swing.BorderFactory;</span></li><li><span><span class = "keyword">import</span> javax.swing.DefaultListModel;</span></li><li><span><span class = "keyword">import</span> javax.swing.ImageIcon;</span></li><li><span><span class = "keyword">import</span> javax.swing.JList;</span></li><li><span><span class = "keyword">import</span> javax.swing.JPanel;</span></li><li><span><span class = "keyword">import</span> javax.swing.JScrollPane;</span></li><li><span><span class = "keyword">import</span> javax.swing.ListCellRenderer;</span></li><li><span><span class = "keyword">import</span> javax.swing.filechooser.FileSystemView;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> Tools.ExtensionFilter;</span></li><li><span></span></li><li><span><span class = "keyword">public</span> <span class = "keyword">class</span> FolderPane <span class = "keyword">extends</span> JPanel {</span></li><li><span>	<span class = "keyword">public</span>  FileSystemView fileSystemView =</span></li><li><span>		FileSystemView.getFileSystemView();</span></li><li><span>	</span></li><li><span>	<span class = "keyword">private</span> File path = fileSystemView.getRoots()[<span class = "literal">0</span>];</span></li><li><span>	</span></li><li><span>	<span class = "keyword">private</span> File[] files;</span></li><li><span>	</span></li><li><span>	<span class = "comment">// private ImageIcon[] icons;</span></span></li><li><span>	</span></li><li><span>	<span class = "comment">// private String[] strName;</span></span></li><li><span>	</span></li><li><span>	<span class = "keyword">private</span> DefaultListModel listModel = <span class = "keyword">new</span> DefaultListModel();</span></li><li><span>	</span></li><li><span>	<span class = "keyword">private</span> JList fileList = <span class = "keyword">new</span> JList(listModel);</span></li><li><span>	</span></li><li><span>	<span class = "keyword">private</span> ListCellRenderer renderer = <span class = "keyword">new</span> C2HListCellRenderer();</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> FolderPane() {</span></li><li><span>		</span></li><li><span>		files = path.listFiles(<span class = "keyword">new</span> ExtensionFilter(<span class = "keyword">new</span> String[]{<span class = "literal">".java"</span>, <span class = "literal">".c"</span>, <span class = "literal">".cpp"</span>, <span class = "literal">".h"</span>}));</span></li><li><span>		</span></li><li><span>		<span class = "comment">/*icons = new ImageIcon[files.length];</span></span></li><li><span><span class = "comment">		</span></span></li><li><span><span class = "comment">		for (int i = 0; i &lt; files.length; i++) {</span></span></li><li><span><span class = "comment">			icons[i] = new ImageIcon();</span></span></li><li><span><span class = "comment">		}</span></span></li><li><span><span class = "comment">		</span></span></li><li><span><span class = "comment">		strName = new String[files.length];</span></span></li><li><span><span class = "comment">		</span></span></li><li><span><span class = "comment">		for (int i = 0; i &lt; files.length; i++) {</span></span></li><li><span><span class = "comment">			strName[i] = new String();</span></span></li><li><span><span class = "comment">		}*/</span></span></li><li><span></span></li><li><span></span></li><li><span>		<span class = "keyword">for</span> (<span class = "keyword">int</span> i = <span class = "literal">0</span>; i &lt; files.length; i++) {		</span></li><li><span>			listModel.addElement(<span class = "keyword">new</span> Object[]{(ImageIcon)fileSystemView.getSystemIcon(files[i]),</span></li><li><span>				files[i].getName()});</span></li><li><span>		}</span></li><li><span>		</span></li><li><span>		fileList.setCellRenderer(renderer);</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		JScrollPane jsp = <span class = "keyword">new</span> JScrollPane(fileList);</span></li><li><span>		jsp.setPreferredSize(<span class = "keyword">new</span> Dimension(<span class = "literal">464</span>, <span class = "literal">555</span>));</span></li><li><span>		<span class = "comment">// setBorder(BorderFactory.createLineBorder(Color.black));</span></span></li><li><span>		add(jsp);</span></li><li><span>		</span></li><li><span>		</span></li><li><span>		</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> <span class = "keyword">void</span> setPath(File newPath) {</span></li><li><span>		<span class = "keyword">if</span> (path != newPath) {</span></li><li><span>			path = newPath;</span></li><li><span>			repaint();</span></li><li><span>			<span class = "comment">// System.out.println("repaint");</span></span></li><li><span>		}</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> File getPath() {</span></li><li><span>		<span class = "keyword">return</span> path;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">protected</span> <span class = "keyword">void</span> paintComponent(Graphics g) {</span></li><li><span>		<span class = "keyword">super</span>.paintComponent(g);</span></li><li><span>		</span></li><li><span>		listModel.removeAllElements();</span></li><li><span>		</span></li><li><span>		files = path.listFiles(<span class = "keyword">new</span> ExtensionFilter(<span class = "keyword">new</span> String[]{<span class = "literal">".java"</span>, <span class = "literal">".c"</span>, <span class = "literal">".cpp"</span>, <span class = "literal">".h"</span>}));</span></li><li><span>		</span></li><li><span>		<span class = "keyword">if</span> (files != <span class = "keyword">null</span>){</span></li><li><span>			<span class = "keyword">for</span> (<span class = "keyword">int</span> i = <span class = "literal">0</span>; i &lt; files.length; i++) {		</span></li><li><span>				listModel.addElement(<span class = "keyword">new</span> Object[]{(ImageIcon)fileSystemView.getSystemIcon(files[i]),</span></li><li><span>					files[i].getName()});</span></li><li><span>				<span class = "comment">/*icons[i] = (ImageIcon)fileSystemView.getSystemIcon(files[i]);</span></span></li><li><span><span class = "comment">				strName[i] = files[i].getName();</span></span></li><li><span><span class = "comment">				listModel.addElement(new Object[]{icons[i], strName[i]});*/</span></span></li><li><span></span></li><li><span>			}</span></li><li><span>		}</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> File[] getFiles() {</span></li><li><span>		<span class = "keyword">return</span> files;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> <span class = "keyword">void</span> setFiles(File[] files) {</span></li><li><span>		<span class = "keyword">this</span>.files = files;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> DefaultListModel getListModel() {</span></li><li><span>		<span class = "keyword">return</span> listModel;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JList getFileList() {</span></li><li><span>		<span class = "keyword">return</span> fileList;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>}</span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="D:\ДњТы\JavaStudy\Code2Html\top.png"onerror="nofind();" width="48" alt="Back to top" title="Back to top"></a>
+<script type="text/javascript">
+function nofind(){
+var img=event.srcElement;
+img.src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&size=48"; 
+img.onerror=null;}
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>boardtype.h</title>
+<style type = "text/css">
+.orderList {
+tab-size:4;
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008282;}
+.literal {color: #0000ff;}
+.preprocessor {color: grey;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "preprocessor">#include&lt;Windows.h&gt;</span></span></li><li><span></span></li><li><span><span class = "preprocessor">#ifndef BOARDTYPE_H_</span></span></li><li><span><span class = "preprocessor">#define BOARDTYPE_H_</span></span></li><li><span></span></li><li><span><span class = "comment">/*ad</span></span></li><li><span><span class = "comment">ad</span></span></li><li><span><span class = "comment">ad*/</span></span></li><li><span></span></li><li><span></span></li><li><span><span class = "comment">/*	禁手类型	</span></span></li><li><span><span class = "comment">/*	禁手类型	*/</span></span></li><li><span></span></li><li><span><span class = "preprocessor">#define	BAN33	1		BLOCKCOMMENT	三三禁手									*/</span></span></li><li><span><span class = "preprocessor">#define	BAN44	2		BLOCKCOMMENT	四四禁手									*/</span></span></li><li><span><span class = "preprocessor">#define	BANLL	3		BLOCKCOMMENT	长连禁手									*/</span></span></li><li><span></span></li><li><span><span class = "comment">/*棋型标号	</span></span></li><li><span><span class = "comment">/*棋型标号	*/</span></span></li><li><span></span></li><li><span><span class = "preprocessor">#define L4L4	1		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define L4D4	2		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define L4L3	3		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define D4D4	4		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define	L4		5		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define	BAN5	6		BLOCKCOMMENT	禁手五										*/</span></span></li><li><span><span class = "preprocessor">#define	D4L3	7		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define	TL4L3	8		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define	TD4L3	9		BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define	L3L3	10		BLOCKCOMMENT												*/</span></span></li><li><span></span></li><li><span><span class = "comment">/*棋型分值</span></span></li><li><span><span class = "comment">/*棋型分值*/</span></span></li><li><span></span></li><li><span><span class = "preprocessor">#define	MAXF	1000000	BLOCKCOMMENT	当连成5子时返回无限大值						*/</span></span></li><li><span><span class = "preprocessor">#define L4L4F	750000	BLOCKCOMMENT	8192 8184(单跳) 8176(双跳)	双活四			*/</span></span></li><li><span><span class = "preprocessor">#define L4D4F	700000	BLOCKCOMMENT	6144 6140 6136 6132			活四死四		*/</span></span></li><li><span><span class = "preprocessor">#define L4L3F	650000	BLOCKCOMMENT	4608 4600 4592				活四活三		*/</span></span></li><li><span><span class = "preprocessor">#define D4D4F	600000	BLOCKCOMMENT	4096 4092 4088								*/</span></span></li><li><span><span class = "preprocessor">#define	L4F		550000	BLOCKCOMMENT	4096										*/</span></span></li><li><span><span class = "preprocessor">#define	TL4L3F	500000	BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define	D4L3F	450000	BLOCKCOMMENT	2560 2552(跳三) 2556(跳四) 2548(跳三跳四)	*/</span></span></li><li><span><span class = "preprocessor">#define	TD4L3F	400000	BLOCKCOMMENT												*/</span></span></li><li><span><span class = "preprocessor">#define	L3L3F	350000	BLOCKCOMMENT	1024 1016(单跳活三) 1008(双跳活三)			*/</span></span></li><li><span><span class = "preprocessor">#define BASEF	10		BLOCKCOMMENT	得分基数									*/</span></span></li><li><span></span></li><li><span></span></li><li><span></span></li><li><span></span></li><li><span><span class = "comment">/*其他</span></span></li><li><span><span class = "comment">/*其他*/</span></span></li><li><span></span></li><li><span><span class = "preprocessor">#define BORDLEN 1		BLOCKCOMMENT边界扩展宽度									*/</span></span></li><li><span></span></li><li><span></span></li><li><span><span class = "comment">/*文字绘色</span></span></li><li><span><span class = "comment">/*文字绘色*/</span></span></li><li><span></span></li><li><span><span class = "keyword">const</span> <span class = "keyword">int</span> COLOR_RED		=		FOREGROUND_RED;</span></li><li><span><span class = "keyword">const</span> <span class = "keyword">int</span> COLOR_BLUE	=		FOREGROUND_BLUE;</span></li><li><span><span class = "keyword">const</span> <span class = "keyword">int</span> COLOR_GREEN	=		FOREGROUND_GREEN;</span></li><li><span></span></li><li><span></span></li><li><span><span class = "preprocessor">#endif </span></span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="D:\代码\JavaStudy\Code2Html\top.png"onerror="nofind();" width="48" alt="Back to top" title="Back to top"></a>
+<script type="text/javascript">
+function nofind(){
+var img=event.srcElement;
+img.src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&size=48"; 
+img.onerror=null;}
+</script>
+</body>
+</html>

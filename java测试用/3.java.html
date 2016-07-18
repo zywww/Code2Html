@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>3.java</title>
+<style type = "text/css">
+.orderList {
+tab-size:4;
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008282;}
+.literal {color: #0000ff;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "keyword">package</span> GUI;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> java.awt.Component;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> javax.swing.ImageIcon;</span></li><li><span><span class = "keyword">import</span> javax.swing.JLabel;</span></li><li><span><span class = "keyword">import</span> javax.swing.JList;</span></li><li><span><span class = "keyword">import</span> javax.swing.ListCellRenderer;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> java.awt.*;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> javax.swing.*;</span></li><li><span></span></li><li><span><span class = "keyword">public</span> <span class = "keyword">class</span> C2HListCellRenderer <span class = "keyword">implements</span> ListCellRenderer {</span></li><li><span>	<span class = "keyword">private</span> JLabel jlbCell = <span class = "keyword">new</span> JLabel(<span class = "literal">" "</span>, JLabel.LEFT);</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> Component getListCellRendererComponent</span></li><li><span>    (JList list, Object value, <span class = "keyword">int</span> index, <span class = "keyword">boolean</span> isSelected,</span></li><li><span>     <span class = "keyword">boolean</span> cellHasFocus) {</span></li><li><span>		Object[] pair = (Object[])value;</span></li><li><span>		jlbCell.setOpaque(<span class = "keyword">true</span>);</span></li><li><span>		jlbCell.setIcon((ImageIcon)pair[<span class = "literal">0</span>]);</span></li><li><span>		jlbCell.setText(pair[<span class = "literal">1</span>].toString());</span></li><li><span></span></li><li><span>		<span class = "keyword">if</span> (isSelected) {</span></li><li><span>			jlbCell.setForeground(list.getSelectionForeground());</span></li><li><span>			jlbCell.setBackground(list.getSelectionBackground());</span></li><li><span>		}</span></li><li><span>		<span class = "keyword">else</span> {</span></li><li><span>			jlbCell.setForeground(list.getForeground());</span></li><li><span>			jlbCell.setBackground(list.getBackground());</span></li><li><span>		}</span></li><li><span></span></li><li><span></span></li><li><span>		<span class = "keyword">return</span> jlbCell;</span></li><li><span>	}</span></li><li><span>}</span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="D:\ДњТы\JavaStudy\Code2Html\top.png"onerror="nofind();" width="48" alt="Back to top" title="Back to top"></a>
+<script type="text/javascript">
+function nofind(){
+var img=event.srcElement;
+img.src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&size=48"; 
+img.onerror=null;}
+</script>
+</body>
+</html>

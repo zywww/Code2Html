@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>main.cpp</title>
+<style type = "text/css">
+.orderList {
+tab-size:4;
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008282;}
+.literal {color: #0000ff;}
+.preprocessor {color: grey;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "keyword">for</span>(<span class = "keyword">int</span> i = 0; i &lt; n - 1; ++i)</span></li><li><span>    <span class = "keyword">for</span>(<span class = "keyword">int</span> j = 0; j &lt; n - <span class = "literal">1</span> - i; ++j)</span></li><li><span>    <span class = "keyword">if</span>(a[j] &gt; a[j + <span class = "literal">1</span>])</span></li><li><span>    {</span></li><li><span>        <span class = "keyword">int</span> temp = a[j];</span></li><li><span>        a[j] = a[j + <span class = "literal">1</span>];</span></li><li><span>        a[j + <span class = "literal">1</span>] = temp;</span></li><li><span>    }</span></li><li><span></span></li><li><span><span class = "keyword">bool</span> flag = true;</span></li><li><span></span></li><li><span><span class = "keyword">while</span>(flag)</span></li><li><span>{</span></li><li><span>    flag = false;</span></li><li><span></span></li><li><span>    <span class = "keyword">for</span>(<span class = "keyword">int</span> j = 0; j &lt; n - 1; ++j)</span></li><li><span>        <span class = "keyword">if</span>(a[j] &gt; a[j + <span class = "literal">1</span>])</span></li><li><span>    {</span></li><li><span>        <span class = "keyword">int</span> temp = a[j];</span></li><li><span>        a[j] = a[j + <span class = "literal">1</span>];</span></li><li><span>        a[j + <span class = "literal">1</span>] = temp;</span></li><li><span>        flag = true;</span></li><li><span>    }</span></li><li><span></span></li><li><span>    --n;</span></li><li><span>}</span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="D:\ДњТы\JavaStudy\Code2Html\top.png"onerror="nofind();" width="48" alt="Back to top" title="Back to top"></a>
+<script type="text/javascript">
+function nofind(){
+var img=event.srcElement;
+img.src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&size=48"; 
+img.onerror=null;}
+</script>
+</body>
+</html>

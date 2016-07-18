@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>5.java</title>
+<style type = "text/css">
+.orderList {
+tab-size:4;
+font-family: Consolas, "Courier New", Courier, mono, serif;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 96%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-left: 45px;
+padding-top: 1px;}
+li { list-style: decimal-leading-zero;
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px; }
+span {
+color: #000000;}
+.keyword {color: #006699; font-weight: bold;}
+.comment {color: #008282;}
+.literal {color: #0000ff;}
+#backToTop {
+position: fixed; bottom: 50px; right: 70px;}
+</style>
+</head>
+<body>
+<div class="sourceCode">
+<div>
+<div class="tools"></div>
+</div>
+<pre>
+<ol class="orderList"><li><span><span class = "keyword">package</span> GUI;</span></li><li><span></span></li><li><span></span></li><li><span><span class = "keyword">import</span> java.awt.BorderLayout;</span></li><li><span><span class = "keyword">import</span> java.awt.Dimension;</span></li><li><span><span class = "keyword">import</span> java.io.File;</span></li><li><span></span></li><li><span><span class = "keyword">import</span> javax.swing.JPanel;</span></li><li><span><span class = "keyword">import</span> javax.swing.JScrollPane;</span></li><li><span><span class = "keyword">import</span> javax.swing.filechooser.FileSystemView;</span></li><li><span></span></li><li><span><span class = "keyword">public</span> <span class = "keyword">class</span> DirectoryTreePane <span class = "keyword">extends</span> JPanel {</span></li><li><span>	<span class = "keyword">private</span> JFileTree tree = <span class = "keyword">new</span> JFileTree();</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span>  FileSystemView fileSystemView =</span></li><li><span>	        FileSystemView.getFileSystemView();</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> DirectoryTreePane() {</span></li><li><span>		<span class = "comment">// tree.setRootVisible(false);</span></span></li><li><span>		</span></li><li><span>		<span class = "keyword">try</span>{</span></li><li><span>            tree.setSelectFile(fileSystemView.getRoots()[<span class = "literal">0</span>]);</span></li><li><span>        } <span class = "keyword">catch</span>(Exception ex){</span></li><li><span>            ex.printStackTrace();</span></li><li><span>        }</span></li><li><span>		</span></li><li><span>		setLayout(<span class = "keyword">new</span> BorderLayout());</span></li><li><span>		add(<span class = "keyword">new</span> JScrollPane(tree), BorderLayout.CENTER);</span></li><li><span>		</span></li><li><span>		setMinimumSize(<span class = "keyword">new</span> Dimension(<span class = "literal">230</span>, <span class = "literal">0</span>));</span></li><li><span>		<span class = "comment">// setPreferredSize(new Dimension(230, 0));</span></span></li><li><span>		</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> File getSelectFile(){</span></li><li><span>		<span class = "keyword">return</span> tree.getSelectFile();</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> JFileTree getTree() {</span></li><li><span>		<span class = "keyword">return</span> tree;</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>	<span class = "keyword">public</span> <span class = "keyword">void</span> setSelectFolder(File path) {</span></li><li><span>		<span class = "keyword">try</span> {</span></li><li><span>			tree.setSelectFile(path);</span></li><li><span>		} <span class = "keyword">catch</span> (Exception e) {</span></li><li><span>			<span class = "comment">//  TODO Auto-generated catch block</span></span></li><li><span>			e.printStackTrace();</span></li><li><span>		}</span></li><li><span>	}</span></li><li><span>	</span></li><li><span>}</span></li></ol>
+</pre>
+</div>
+<a id="backToTop" href="#top">
+<img src="D:\ДњТы\JavaStudy\Code2Html\top.png"onerror="nofind();" width="48" alt="Back to top" title="Back to top"></a>
+<script type="text/javascript">
+function nofind(){
+var img=event.srcElement;
+img.src="http://www.easyicon.net/api/resize_png_new.php?id=1180466&size=48"; 
+img.onerror=null;}
+</script>
+</body>
+</html>
